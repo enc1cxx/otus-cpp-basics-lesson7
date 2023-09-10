@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="22" failures="0" disabled="0" errors="0" time="0.012" timestamp="2023-09-10T16:00:11.170" name="AllTests">
+  <testsuite name="list" tests="12" failures="0" disabled="0" skipped="0" errors="0" time="0.005" timestamp="2023-09-10T16:00:11.343">
+    <testcase name="is_created" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.343" classname="list" />
+    <testcase name="is_empty" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.343" classname="list" />
+    <testcase name="is_equal_empty" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.344" classname="list" />
+    <testcase name="is_equal_push_back_front" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.344" classname="list" />
+    <testcase name="push_back" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.345" classname="list" />
+    <testcase name="push_front" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.345" classname="list" />
+    <testcase name="insert" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.346" classname="list" />
+    <testcase name="pop_back" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.346" classname="list" />
+    <testcase name="pop_front" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.347" classname="list" />
+    <testcase name="clear" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.347" classname="list" />
+    <testcase name="size" status="run" result="completed" time="0.001" timestamp="2023-09-10T16:00:11.347" classname="list" />
+    <testcase name="get_element" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.348" classname="list" />
+  </testsuite>
+  <testsuite name="vector" tests="10" failures="0" disabled="0" skipped="0" errors="0" time="0.004" timestamp="2023-09-10T16:00:11.349">
+    <testcase name="is_created" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.349" classname="vector" />
+    <testcase name="is_empty" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.349" classname="vector" />
+    <testcase name="is_equal_empty" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.350" classname="vector" />
+    <testcase name="push_back" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.350" classname="vector" />
+    <testcase name="middle_insert" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.351" classname="vector" />
+    <testcase name="pop_back" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.351" classname="vector" />
+    <testcase name="erase" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.352" classname="vector" />
+    <testcase name="size" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.352" classname="vector" />
+    <testcase name="clear" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.352" classname="vector" />
+    <testcase name="get_element" status="run" result="completed" time="0" timestamp="2023-09-10T16:00:11.353" classname="vector" />
+  </testsuite>
+</testsuites>

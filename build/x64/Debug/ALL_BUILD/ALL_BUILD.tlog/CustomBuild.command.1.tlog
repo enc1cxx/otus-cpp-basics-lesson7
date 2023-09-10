@@ -1,0 +1,10 @@
+^C:\USERS\USER\SOURCE\REPOS\OTUS-CPP-BASICS-LESSON7\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/otus-cpp-basics-lesson7 -BC:/Users/User/source/repos/otus-cpp-basics-lesson7/build --check-stamp-file C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

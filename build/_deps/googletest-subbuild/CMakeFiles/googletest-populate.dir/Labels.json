@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/98f0c9258480f2b4c5e4206a89a4b78f/googletest-populate.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/c3d6ca87796f31f3ec37909e4b1ebf29/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/ffaa2a737a9276b4ff8d642e17d7d0eb/googletest-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/ffaa2a737a9276b4ff8d642e17d7d0eb/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/ffaa2a737a9276b4ff8d642e17d7d0eb/googletest-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/ffaa2a737a9276b4ff8d642e17d7d0eb/googletest-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/ffaa2a737a9276b4ff8d642e17d7d0eb/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/ffaa2a737a9276b4ff8d642e17d7d0eb/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/ffaa2a737a9276b4ff8d642e17d7d0eb/googletest-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/User/source/repos/otus-cpp-basics-lesson7/build/_deps/googletest-subbuild/CMakeFiles/ffaa2a737a9276b4ff8d642e17d7d0eb/googletest-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-populate"
+		],
+		"name" : "googletest-populate"
+	}
+}

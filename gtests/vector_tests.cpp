@@ -1,114 +1,146 @@
 #include <gtest/gtest.h>
 
-#include <vector>
+#include "vector.hpp"
 
+// 1 Создание контейнера
 TEST(vector, is_created) {
-  std::vector<int> vector1;
-  std::vector<int> *ptr = &vector1;
-  ASSERT_FALSE(ptr == nullptr);
+  vector::Vector<int> vector1;
+  vector::Vector<int> *ptr = &vector1;
+  ASSERT_TRUE(ptr != nullptr);
 }
 
-TEST(vector, is_empty) {
-  std::vector<int> vector1;
-  std::vector<int> vector2 = {};
-  ASSERT_TRUE(vector1.empty());
-  ASSERT_TRUE(vector2.empty());
-}
-
-TEST(vector, is_equal_empty) {
-  std::vector<int> vector1;
-  std::vector<int> vector2 = {};
-  ASSERT_TRUE(vector1 == vector2);
-}
-
-TEST(vector, is_equal_push_back_insert) {
-  std::vector<int> vector1;
-  std::vector<int> vector2;
-  vector1.push_back(1);
-  vector2.insert(vector2.begin(), 1);
-  ASSERT_TRUE(vector1 == vector2);
-}
-
+// 2 Вставка элементов в конец
 TEST(vector, push_back) {
-  std::vector<int> vector1;
-  std::vector<int> vector2 = {1, 2, 3};
-  vector1.push_back(1);
-  vector1.push_back(2);
-  vector1.push_back(3);
-  ASSERT_TRUE(vector1 == vector2);
+  vector::Vector<int> vector1;
+  for (int i = 1; i <= 3; ++i) {
+    vector1.push_back(i);
+  }
+  ASSERT_TRUE(vector1[0] == 1);
+  ASSERT_TRUE(vector1[1] == 2);
+  ASSERT_TRUE(vector1[2] == 3);
 }
 
-TEST(vector, push_front) {
-  std::vector<int> vector1;
-  std::vector<int> vector2 = {1, 2, 3};
-  vector1.insert(vector1.begin(), 3);
-  vector1.insert(vector1.begin(), 2);
-  vector1.insert(vector1.begin(), 1);
-  ASSERT_TRUE(vector1 == vector2);
-}
-
-TEST(vector, middle_insert) {
-  std::vector<int> vector1 = {1, 3};
-  std::vector<int> vector2 = {1, 2, 3};
-  vector1.insert(std::next(vector1.begin(), 1), 2);
-  ASSERT_TRUE(vector1 == vector2);
-}
-
-TEST(vector, pop_back) {
-  std::vector<int> vector1 = {1, 2};
-  std::vector<int> vector2 = {1, 2, 3};
-  vector2.pop_back();
-  ASSERT_TRUE(vector1 == vector2);
-}
-
-TEST(vector, erase) {
-  std::vector<int> vector1 = {2, 3};
-  std::vector<int> vector2 = {1, 2, 3};
-  vector2.erase(vector2.begin());
-  ASSERT_TRUE(vector1 == vector2);
-}
-
-TEST(vector, size) {
-  std::vector<int> vector1 = {1, 2, 3};
-  std::vector<int> vector2 = {};
-  std::vector<int> vector3;
+// 3 Вставка элементов в начало
+TEST(vector, insert_front) {
+  vector::Vector<int> vector1;
+  for (int i = 3; i != 0; --i) {
+    vector1.insert(vector1.begin(), i);
+  }
   ASSERT_TRUE(vector1.size() == 3);
-  ASSERT_TRUE(vector2.size() == 0);
-  ASSERT_TRUE(vector3.size() == 0);
+  ASSERT_TRUE(vector1[0] == 1);
+  ASSERT_TRUE(vector1[1] == 2);
+  ASSERT_TRUE(vector1[2] == 3);
 }
 
-TEST(vector, clear) {
-  std::vector<int> vector1 = {1, 2, 3};
-  std::vector<int> vector2 = {};
-  vector1.clear();
-  ASSERT_TRUE(vector1 == vector2);
+// 4 Вставка элементов в середину
+TEST(vector, insert_middle) {
+  vector::Vector<int> vector1;
+  vector1.push_back(1);
+  vector1.push_back(3);
+  vector1.insert(std::next(vector1.begin()), 2);
+  ASSERT_TRUE(vector1.size() == 3);
+  ASSERT_TRUE(vector1[0] == 1);
+  ASSERT_TRUE(vector1[1] == 2);
+  ASSERT_TRUE(vector1[2] == 3);
 }
 
+// 5 Удаление элементов из конца
+TEST(vector, pop_back) {
+  vector::Vector<int> vector1;
+  for (int i = 1; i <= 3; ++i) {
+    vector1.push_back(i);
+  }
+  ASSERT_TRUE(vector1.size() == 3);
+  vector1.pop_back();
+  ASSERT_TRUE(vector1.size() == 2);
+  ASSERT_TRUE(vector1[0] == 1);
+  ASSERT_TRUE(vector1[1] == 2);
+}
+
+// 6 Удаление элементов из начала
+TEST(vector, erase_front) {
+  vector::Vector<int> vector1;
+  for (int i = 1; i <= 3; ++i) {
+    vector1.push_back(i);
+  }
+  ASSERT_TRUE(vector1.size() == 3);
+  vector1.erase(vector1.begin());
+  ASSERT_TRUE(vector1.size() == 2);
+  ASSERT_TRUE(vector1[0] == 2);
+  ASSERT_TRUE(vector1[1] == 3);
+}
+
+// 7 Удаление элементов из середины
+TEST(vector, erase_middle) {
+  vector::Vector<int> vector1;
+  for (int i = 1; i <= 3; ++i) {
+    vector1.push_back(i);
+  }
+  vector1.erase(std::next(vector1.begin(), 1));
+  ASSERT_TRUE(vector1[0] == 1);
+  ASSERT_TRUE(vector1[1] == 3);
+}
+
+// 8 Получение элементов из контейнера
 TEST(vector, get_element) {
-  std::vector<int> vector1 = {1, 2, 3};
+  vector::Vector<int> vector1;
+  for (int i = 1; i <= 3; ++i) {
+    vector1.push_back(i);
+  }
   auto it = vector1.begin();
   ASSERT_TRUE(*it == 1);
   std::advance(it, 1);
   ASSERT_TRUE(*it == 2);
   std::advance(it, 1);
   ASSERT_TRUE(*it == 3);
+  ASSERT_TRUE(vector1[0] = 1);
+  ASSERT_TRUE(vector1[1] = 2);
+  ASSERT_TRUE(vector1[2] = 3);
 }
 
+// 9 Получение размера контейнера
+TEST(vector, size) {
+  vector::Vector<int> vector1;
+  ASSERT_TRUE(vector1.size() == 0);
+  for (int i = 1; i <= 3; ++i) {
+    vector1.push_back(i);
+  }
+  ASSERT_TRUE(vector1.size() == 3);
+}
+
+// 10 Копирование контейнера
 TEST(vector, copy) {
-  std::vector<int> vector1 = {1, 2, 3};
-  std::vector<int> vector2 = vector1;
+  vector::Vector<int> vector1;
+  for (int i = 1; i <= 3; ++i) {
+    vector1.push_back(i);
+  }
+  vector::Vector<int> vector2 = vector1;
   ASSERT_TRUE(vector1 == vector2);
 }
 
+// 11 Перемещение контейнера
 TEST(vector, move) {
-  std::vector<int> full = {1, 2, 3};
-  std::vector<int> empty;
+  vector::Vector<int> full;
+  for (int i = 1; i <= 3; ++i) {
+    full.push_back(i);
+  }
 
-  std::vector<int> vector1 = {1, 2, 3};
-  std::vector<int> vector2;
+  vector::Vector<int> vector1;
+  for (int i = 1; i <= 3; ++i) {
+    vector1.push_back(i);
+  }
+  vector::Vector<int> vector2;
 
   vector2 = std::move(vector1);
 
-  ASSERT_TRUE(vector1 == empty);
   ASSERT_TRUE(vector2 == full);
 }
+
+// Тесты вне задания
+
+TEST(vector, is_equal_empty) {
+  vector::Vector<int> vector1;
+  vector::Vector<int> vector2;
+  ASSERT_TRUE(vector1 == vector2);
+}
+

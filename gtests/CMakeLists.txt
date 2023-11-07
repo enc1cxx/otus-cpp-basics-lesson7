@@ -7,6 +7,6 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(containers_tests list_tests.cpp vector_tests.cpp ${COMMON_SRCS})
+add_executable(containers_tests single_linked_list_tests.cpp double_linked_list_tests.cpp vector_tests.cpp ${COMMON_SRCS})
 target_include_directories(containers_tests PUBLIC ${CMAKE_SOURCE_DIR})
 target_link_libraries(containers_tests PUBLIC gtest gtest_main)
